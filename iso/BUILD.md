@@ -5,51 +5,39 @@
 Get `mkarchiso` to complete successfully and produce an ISO that boots to a Plasma desktop in QEMU.  
 Theme can be imperfect. The milestone is a working bootable image.
 
-## Prerequisites (on an Arch Linux build machine)
+## Prerequisites
+
+On an Arch Linux machine:
 
 ```bash
 sudo pacman -S --needed archiso
 ```
 
-You need root privileges and a reasonable amount of disk space (~10 GB free recommended).
+Root privileges and ~10 GB free space required.
 
-## Current profile location
+## Recommended way to reach first successful build
 
-```
-iso/archiso/
-```
-
-Contains:
-- `packages.x86_64` — minimal live package list
-- `profiledef.sh` — basic profile definition
-
-Still missing for a complete profile (to be added next):
-- `pacman.conf`
-- `airootfs/` overlays (hostname, users, sddm config, etc.)
-- bootloader configs under `efiboot/` and `syslinux/`
-- `bootstrap_packages.x86_64` if needed
-
-## Build command (once profile is more complete)
+Creating every bootloader file from scratch is error-prone. Use the official releng profile as the base and overlay Pitchstone customizations:
 
 ```bash
-cd /path/to/Pitchstone-OS
-sudo mkarchiso -v -w /tmp/pitchstone-work -o ./out iso/archiso
+# 1. Copy the official profile
+cp -a /usr/share/archiso/configs/releng /tmp/pitchstone-profile
+
+# 2. Replace / extend with our files
+cp iso/archiso/packages.x86_64          /tmp/pitchstone-profile/
+cp iso/archiso/profiledef.sh            /tmp/pitchstone-profile/
+cp iso/archiso/pacman.conf              /tmp/pitchstone-profile/
+
+# Overlay airootfs pieces
+cp -a iso/archiso/airootfs/*            /tmp/pitchstone-profile/airootfs/
+
+# 3. Build
+sudo mkarchiso -v -w /tmp/pitchstone-work -o ./out /tmp/pitchstone-profile
 ```
 
-The resulting ISO will appear in the `out/` directory.
+The ISO will appear under `./out/`.
 
 ## Testing in QEMU
-
-```bash
-qemu-system-x86_64 \
-  -enable-kvm \
-  -m 4096 \
-  -cdrom out/pitchstone-*.iso \
-  -boot d \
-  -smp 2
-```
-
-Or with a slightly more modern setup:
 
 ```bash
 qemu-system-x86_64 \
@@ -62,11 +50,11 @@ qemu-system-x86_64 \
   -boot order=d
 ```
 
-## Success criteria for this milestone
+## Success criteria
 
 - `mkarchiso` finishes without error
 - ISO boots in QEMU
-- Reaches a graphical Plasma session (even if it still looks mostly like stock Plasma)
-- Calamares is present and can be launched
+- Reaches a graphical Plasma session (even if still mostly stock look)
+- Calamares is present
 
-Theme polish and PitchstoneDark application come immediately after the first successful boot.
+Once this milestone is achieved, we apply PitchstoneDark and refine the layout.

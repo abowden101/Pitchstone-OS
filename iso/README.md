@@ -2,50 +2,37 @@
 
 ## Goal
 
-Produce a bootable live ISO that:
+Produce a bootable live ISO that reaches a Plasma desktop in QEMU.
 
-- Boots into the Pitchstone desktop look (PitchstoneDark + hybrid layout)
-- Has the core branding and theme applied out of the box
-- Offers Calamares installer with our options
-- Includes the ability to install `pitchstone-security-core` easily
-- Feels premium from the first second
+Theme can be rough for the first successful build. The immediate milestone is:
 
-## Technical Approach
+1. `mkarchiso` completes
+2. ISO boots
+3. Desktop session starts
 
-We will use **archiso** (the official Arch Linux ISO build tool). This is the cleanest and most maintainable way to create an Arch-based live ISO.
-
-### High-level structure (planned)
+## Current contents
 
 ```
 iso/
-├─ archiso/                  # Customized archiso profile
-│   ├─ airootfs/             # Files that land in the live system
-│   ├─ efiboot/
-│   ├─ syslinux/
-│   ├─ packages.x86_64      # Packages included in the live ISO
-│   └─ profiledef.sh
-├─ build.sh                 # Wrapper script to build the ISO
+├─ archiso/
+│   ├─ packages.x86_64     # Minimal live package list
+│   └─ profiledef.sh       # Basic profile definition
+├─ BUILD.md               # Build + QEMU test instructions
+├─ build.sh               # Wrapper skeleton
 └─ README.md
 ```
 
-## Phase 1 ISO Target (Minimum Viable Visual Prototype)
+## Still required for a working profile
 
-- Boots to Plasma with PitchstoneDark applied
-- Basic hybrid layout (top panel + dock or clean taskbar)
-- Pitchstone branding visible
-- Calamares present and launchable
-- BlackArch enable script available
-- Core documentation / welcome info
+- `pacman.conf`
+- `airootfs/` (hostname, live user, sddm, basic configs)
+- Bootloader configuration (`efiboot/`, `syslinux/`)
+- Possibly `bootstrap_packages.x86_64`
 
-This first ISO does **not** need every security tool pre-installed. It needs to look and feel like Pitchstone.
+See `BUILD.md` for the exact build and test commands.
 
-## Build Requirements (on the build machine)
+## Priority order (per project direction)
 
-- Arch Linux (or compatible)
-- `archiso` package
-- Sufficient disk space and RAM
-- Root privileges for the build
-
-## Status
-
-Build system skeleton and strategy defined. Next steps are creating the actual archiso profile and packaging the theme so it can be included in `airootfs`.
+1. Make `mkarchiso` succeed
+2. Boot to a desktop in QEMU
+3. Only then apply PitchstoneDark and refine the layout

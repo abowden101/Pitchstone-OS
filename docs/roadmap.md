@@ -2,42 +2,51 @@
 
 ## Phase 0 — Foundation (Complete)
 
-- [x] Public repository created
-- [x] Vision and design system locked
-- [x] Base strategy: Arch + BlackArch + curated meta-packages
-- [x] Hybrid Plasma layout direction defined
-- [x] PitchstoneDark color scheme created
-- [x] Security meta-package structure + core tool list
+- [x] Public repository
+- [x] Vision, design system, base strategy
+- [x] Hybrid layout direction
+- [x] PitchstoneDark color scheme
+- [x] Security meta-package strategy + core list
 - [x] Menu organization plan
-- [x] Wallpaper series direction + concepts
+- [x] Wallpaper & branding direction
 - [x] BlackArch enable script
-- [x] Calamares installer direction
-- [x] First-boot experience defined
+- [x] Calamares & first-boot direction
 - [x] Development guide
 
-## Phase 1 — First Bootable Prototype (Next)
+## Phase 1 — First Bootable Prototype (In Progress)
 
-- [ ] Full Plasma global theme package (colors + layout + window decorations)
-- [ ] Real `.desktop` / menu files for security categories
-- [ ] Expand PKGBUILDs with exact current package names
-- [ ] Calamares branding assets + basic config
-- [ ] Build pipeline notes / live ISO skeleton
-- [ ] Test environment (VM) with theme applied
+**Goal**: A working live ISO that boots into a recognizable Pitchstone desktop.
+
+- [x] ISO build system direction (archiso)
+- [x] Build script skeleton
+- [ ] Complete archiso profile (`packages.x86_64`, `profiledef.sh`, airootfs structure)
+- [ ] Package the Plasma theme so it can be included in the live system
+- [ ] Basic Calamares configuration + branding placeholders
+- [ ] First successful `mkarchiso` build
+- [ ] Test in QEMU and iterate on look & feel
+
+### Definition of Done for Phase 1
+
+- ISO boots
+- Desktop loads with PitchstoneDark applied
+- Hybrid layout (or clean approximation) visible
+- Calamares can be launched
+- System feels intentional and premium, not stock Arch
 
 ## Phase 2 — Daily Driver Quality
 
-- Performance and defaults tuning
-- Hardening profiles
-- App curation and visual consistency
-- Documentation for end users
-- Snapshot / rollback UX
+- Polish, performance, defaults
+- Hardening options
+- Full meta-package installation working cleanly
+- Snapshot UX
+- Documentation
 
 ## Phase 3 — Differentiation
 
-- Unique Pitchstone features (tool organization, AI-assisted workflows, zero-trust helpers)
-- Stronger branding and visual identity
-- Community path decision
+- Unique features and deeper integration
+- Stronger identity
+- Community decisions
 
 ---
 
-**Current focus**: Finish Phase 1 foundations so we can produce the first visual prototype ISO.
+**Current reality check**: Creating the first reliable bootable ISO is real engineering work (profile creation, dependency resolution, repeated builds and VM testing). The repository now has the strategy and scaffolding. The next concrete commits will focus on the archiso profile and theme packaging required to produce that ISO.

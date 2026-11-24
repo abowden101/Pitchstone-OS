@@ -6,76 +6,50 @@ A hybrid desktop that feels more fluid than Windows and more productive than pur
 
 We will support (and ship defaults for) two primary profiles that share the same design language.
 
+**Important constraint**: Use **native Plasma 6 panels only**. Latte Dock is unmaintained and will not be used.
+
 ---
 
 ## Profile A — "Dock" (Mac-influenced, recommended default)
 
-- **Top panel**: Thin (28–32px), full width
-  - Left: Application menu / launcher
-  - Center or left-center: Global menu (when available) or window title
-  - Right: System tray, network, audio, clock, user
-- **Bottom**: Centered floating dock
-  - Contains favorite apps + running apps
-  - Magnification on hover (optional, tasteful)
-  - Trash + maybe a show-desktop button
-- Floating panels and widgets use the same glass language
-- Excellent for focus and visual calm
+- **Top panel**: Thin (28–32px), full width, native Plasma panel
+  - Left: Application Launcher
+  - Right: System Tray + Clock + User
+- **Bottom**: Centered native Plasma panel configured as a dock-like panel
+  - Favorites + running applications
+  - Clean, floating appearance via panel settings (thickness, floating, opacity)
 
 ## Profile B — "Taskbar" (Windows-influenced productivity)
 
-- **Bottom panel**: Full-width modern taskbar (40–44px)
-  - Strong Start-style launcher on the left
-  - Pinned + running apps in the center or left-center
+- **Bottom panel**: Full-width native Plasma panel (40–44px)
+  - Strong launcher on the left
+  - Pinned + running apps
   - System tray and clock on the right
-- Optional thin top panel for global indicators only (or none)
-- Feels immediately familiar to Windows power users while still looking premium
+- Optional very thin top panel for global indicators only
 
-Both profiles share:
-- Same color system
-- Same glass treatment
-- Same window decorations and animations
-- Same icon set
+Both profiles share the same color system, glass treatment, window decorations, and icons.
 
-Users should be able to switch between profiles cleanly (script or Plasma layout switcher).
+Users should be able to switch between profiles via a simple script or Plasma layout switcher.
 
 ---
 
 ## Recommended Phase 1 Default
 
-**Start with Profile A (Dock)** as the primary shipped look.
-
-Reasons:
-- Differentiates strongly from stock KDE and from Windows
-- Looks more "premium" and intentional out of the box
-- Still highly productive once users learn the dock + overview
-
-We can offer Profile B as a one-click alternative during or after install.
+**Profile A (Dock-style)** using only native Plasma 6 panels.
 
 ---
 
-## Key Plasma Components to Customize
+## Key Plasma Components
 
-- Latte Dock or native Plasma panels + Dock (evaluate best 2026 option)
-- Application Dashboard or modern launcher
-- Window decorations (light, integrated titlebars preferred)
-- Overview / Activities integration
-- Global theme + color scheme + plasma style + window decorations + icons as a coherent package
-
----
-
-## Layout Experiments to Run First
-
-1. Top panel + centered bottom dock (primary)
-2. Top panel + left-aligned dock
-3. Full bottom taskbar only (Profile B prototype)
-4. Dual panel with very thin top + strong bottom
-
-Document screenshots and notes in `/themes/plasma/experiments/`.
+- Native Plasma panels (no third-party docks)
+- Application Launcher / Kickoff or Application Dashboard
+- Window decorations (light, modern)
+- Overview
+- Global theme + color scheme + plasma style as a coherent package
 
 ---
 
 ## Implementation Notes
 
-- Prefer native Plasma 6 features where possible over heavy third-party docks if stability is better
-- All layout configs should be stored as clean, version-controlled files that can be applied by a script or package
-- Branding package should set the default look on first boot
+- All layout configuration must use native Plasma 6 features and be stored as version-controlled files that a package or first-boot script can apply.
+- Branding package sets the default look on first boot of the live ISO and installed system.

@@ -1,0 +1,18 @@
+# Build artifacts
+*.iso
+*.img
+*.qcow2
+build/
+out/
+*.tar.gz
+
+# Editor / OS
+.DS_Store
+*.swp
+*~
+.idea/
+.vscode/
+
+# Temporary
+*.tmp
+*.log

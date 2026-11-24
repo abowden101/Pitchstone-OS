@@ -1,0 +1,25 @@
+# Maintainer: Pitchstone OS Team
+
+pkgname=pitchstone-ebpf
+pkgver=0.1.0
+pkgrel=1
+pkgdesc="eBPF tooling meta-package for Pitchstone OS (bpftrace, BCC, libbpf)"
+arch=('any')
+url="https://github.com/abowden101/Pitchstone-OS"
+license=('GPL-3.0-or-later')
+depends=(
+  'bpftrace'
+  'bcc'
+  'bcc-libbpf-tools'
+  'libbpf'
+  'clang'
+  'llvm'
+  'linux-headers'
+)
+# Intentionally limited to verified official Arch packages only.
+# bpftool is not included (not in official Arch repos at this time).
+
+package() {
+  # Pure meta-package.
+  true
+}

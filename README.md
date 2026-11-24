@@ -2,7 +2,7 @@
 
 **Security-first. Desktop-obsessed. Built to compete.**
 
-Pitchstone OS is a modern Linux distribution that combines the offensive and defensive power of Kali-style tooling with the rolling modernity of Arch, delivered through a heavily refined **hybrid KDE Plasma** desktop designed to feel more polished, fluid, and enjoyable than both macOS and Windows.
+Pitchstone OS is a modern Linux distribution that combines the offensive and defensive power of Kali-style tooling with the rolling modernity of Arch, delivered through a heavily refined **hybrid KDE Plasma 6** desktop designed to feel more polished, fluid, and enjoyable than both macOS and Windows.
 
 ---
 
@@ -13,23 +13,25 @@ Most beautiful distributions are weak on security tooling.
 
 **Pitchstone aims to do both at a high level.**
 
-- **Security DNA**: Curated modern penetration testing, forensics, and hardening toolkit (powered by BlackArch + our meta-packages)
+- **Security DNA**: Curated modern penetration testing, forensics, and hardening toolkit (BlackArch repository + our meta-packages)
 - **Daily Driver Quality**: A desktop experience power users actually want to live in
-- **Hybrid Interface**: Best of macOS fluidity + Windows productivity, executed with glass, depth, and precision
+- **Hybrid Interface**: Best of macOS fluidity + Windows productivity using **native Plasma 6 panels only**
 - **Modern Foundation**: Arch base + carefully layered security tooling
 
 ---
 
-## Current Status (Phase 0 nearly complete)
+## Current Status
 
 - [x] Vision & architecture locked
-- [x] Design system defined (colors, glass, motion, typography)
+- [x] Design system defined
 - [x] Base strategy: Arch + BlackArch + Pitchstone meta-packages
-- [x] Hybrid Plasma layout direction (Dock + Taskbar profiles)
-- [x] `PitchstoneDark` color scheme created
-- [x] Security meta-packages designed (`pitchstone-security-core` etc.)
-- [x] Clean menu organization planned
-- [x] Wallpaper series direction + first concepts generated
+- [x] Hybrid Plasma layout direction (native panels only)
+- [x] `PitchstoneDark` color scheme
+- [x] `pitchstone-security-core` PKGBUILD (official Arch packages only)
+- [x] Menu organization plan
+- [x] LICENSE set to GPL-3.0-or-later
+- [ ] archiso profile + minimal live package list
+- [ ] First successful mkarchiso build that boots to a desktop in QEMU
 
 ---
 
@@ -38,8 +40,8 @@ Most beautiful distributions are weak on security tooling.
 | Layer              | Choice                                      |
 |--------------------|---------------------------------------------|
 | **Base**           | Arch Linux                                  |
-| **Security Tools** | BlackArch repository + curated Pitchstone meta-packages |
-| **Desktop**        | KDE Plasma 6 (heavily refined)              |
+| **Security Tools** | BlackArch repository + curated meta-packages |
+| **Desktop**        | KDE Plasma 6 (native panels only)           |
 | **Look & Feel**    | Hybrid Mac/Windows with glass & depth       |
 | **Filesystem**     | Btrfs + snapshots                           |
 | **Package Mgmt**   | pacman + our meta-packages                  |
@@ -60,15 +62,14 @@ Most beautiful distributions are weak on security tooling.
 
 ```
 Pitchstone-OS/
-├─ docs/           # Vision, roadmap, design system, base strategy
-├─ packaging/      # Meta-packages + menu organization
-├─ themes/
-│   ├─ plasma/    # Color schemes + layout
-│   └─ wallpapers/
-├─ scripts/
-└─ iso/
+├─ docs/           # Vision, roadmap, design system, base strategy, plasma layout
+├─ packaging/      # Meta-packages, menu, calamares notes
+├─ themes/         # Plasma color schemes, wallpapers, branding
+├─ scripts/        # Helper scripts (enable-blackarch.sh)
+└─ iso/            # archiso build system (in progress)
 ```
 
 ---
 
+**License**: GPL-3.0-or-later  
 **Pitchstone OS** — Hard as stone. Sharp as a blade. Beautiful enough to live on.

@@ -33,17 +33,13 @@ depends=(
   'wireguard-tools'
   'openvpn'
 )
-# Note: Many additional high-value tools (nuclei, httpx, bloodhound, bettercap,
-# metasploit, etc.) will be pulled from BlackArch once the repository is enabled.
-# This PKGBUILD will be expanded as we finalize exact package names and
-# BlackArch group dependencies.
-
-optdepends=(
-  'blackarch: Enable full BlackArch repository for 2800+ additional tools'
-)
+# Additional high-value tools (nuclei, httpx, bloodhound, bettercap, metasploit,
+# etc.) become available after the BlackArch repository is enabled via
+# scripts/enable-blackarch.sh. This meta-package intentionally stays lean and
+# only depends on packages that exist in the official Arch repositories.
 
 package() {
-  # This is a pure meta-package. No files to install yet.
-  # Future: install menu .desktop organization files, helper scripts, etc.
+  # Pure meta-package for now.
+  # Future: install menu organization files and helper scripts.
   true
 }

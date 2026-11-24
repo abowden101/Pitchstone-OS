@@ -1,0 +1,58 @@
+# Pitchstone OS - Minimal live ISO package list
+# Goal: Boot to a usable Plasma desktop. Theme can be rough at first.
+
+# Base system
+base
+linux
+linux-firmware
+mkinitcpio
+mkinitcpio-archiso
+syslinux
+memtest86+
+
+# Networking
+networkmanager
+wpa_supplicant
+dhclient
+
+# Firmware / hardware
+sof-firmware
+intel-ucode
+amd-ucode
+
+# Plasma desktop (minimal but functional)
+plasma-desktop
+plasma-workspace
+plasma-pa
+plasma-nm
+kinfocenter
+kscreen
+kwalletmanager
+sddm
+sddm-kcm
+breeze
+breeze-gtk
+
+# Essential applications for live session
+konsole
+dolphin
+firefox
+nano
+vim
+
+# Installer
+calamares
+
+# Utilities needed for live environment
+sudo
+xdg-user-dirs
+xdg-utils
+gparted
+
+# Filesystem tools
+btrfs-progs
+e2fsprogs
+xfsprogs
+
+# For building / debugging the ISO itself if needed
+# (keep minimal for the live image)

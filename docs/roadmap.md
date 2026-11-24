@@ -4,14 +4,17 @@
 
 - [x] Create private repository
 - [x] Define high-level vision
-- [ ] Lock design language (colors, typography, glass, motion principles)
-- [ ] Decide exact base strategy (pure Arch + Kali tooling packaging vs other hybrid approaches)
-- [ ] Research best current Plasma theming / layout techniques for hybrid Mac+Windows feel
-- [ ] Create initial wallpaper + icon direction
+- [x] Lock design language (colors, typography, glass, motion principles) — see `docs/design-system.md`
+- [x] Decide exact base strategy (Arch + curated Kali tooling) — see `docs/base-strategy.md`
+- [x] Define hybrid Plasma layout direction — see `docs/plasma-layout.md`
+- [x] Create initial wallpaper + icon direction — see `themes/README.md`
+- [ ] Generate first wallpaper set
+- [ ] Create first Plasma color scheme + layout config files
+- [ ] Define `pitchstone-security-core` package contents
 
 ## Phase 1 — First Bootable Prototype
 
-- Custom Plasma layout (top panel + dock or refined bottom taskbar hybrid)
+- Custom Plasma layout (top panel + dock as primary)
 - Basic dark theme with glass effects
 - Meta-package skeleton for security tools
 - Calamares installer configuration

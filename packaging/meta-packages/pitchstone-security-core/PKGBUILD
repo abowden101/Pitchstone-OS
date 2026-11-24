@@ -1,0 +1,49 @@
+# Maintainer: Pitchstone OS Team
+
+pkgname=pitchstone-security-core
+pkgver=0.1.0
+pkgrel=1
+pkgdesc="Essential security toolkit for Pitchstone OS (curated high-signal tools)"
+arch=('any')
+url="https://github.com/abowden101/Pitchstone-OS"
+license=('GPL-3.0-or-later')
+depends=(
+  # Recon
+  'nmap'
+  'masscan'
+  # Network
+  'wireshark-qt'
+  'tcpdump'
+  # Password
+  'hashcat'
+  'john'
+  'hydra'
+  # Web
+  'sqlmap'
+  # Wireless
+  'aircrack-ng'
+  # Forensics light
+  'binwalk'
+  'foremost'
+  # Quality of life / supporting
+  'git'
+  'python'
+  'tmux'
+  'jq'
+  'wireguard-tools'
+  'openvpn'
+)
+# Note: Many additional high-value tools (nuclei, httpx, bloodhound, bettercap,
+# metasploit, etc.) will be pulled from BlackArch once the repository is enabled.
+# This PKGBUILD will be expanded as we finalize exact package names and
+# BlackArch group dependencies.
+
+optdepends=(
+  'blackarch: Enable full BlackArch repository for 2800+ additional tools'
+)
+
+package() {
+  # This is a pure meta-package. No files to install yet.
+  # Future: install menu .desktop organization files, helper scripts, etc.
+  true
+}

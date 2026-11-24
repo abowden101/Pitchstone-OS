@@ -1,39 +1,43 @@
 # Pitchstone OS — Roadmap
 
-## Phase 0 — Foundation (Now)
+## Phase 0 — Foundation (Complete)
 
-- [x] Create private repository
-- [x] Define high-level vision
-- [x] Lock design language (colors, typography, glass, motion principles) — see `docs/design-system.md`
-- [x] Decide exact base strategy (Arch + curated Kali tooling) — see `docs/base-strategy.md`
-- [x] Define hybrid Plasma layout direction — see `docs/plasma-layout.md`
-- [x] Create initial wallpaper + icon direction — see `themes/README.md`
-- [ ] Generate first wallpaper set
-- [ ] Create first Plasma color scheme + layout config files
-- [ ] Define `pitchstone-security-core` package contents
+- [x] Public repository created
+- [x] Vision and design system locked
+- [x] Base strategy: Arch + BlackArch + curated meta-packages
+- [x] Hybrid Plasma layout direction defined
+- [x] PitchstoneDark color scheme created
+- [x] Security meta-package structure + core tool list
+- [x] Menu organization plan
+- [x] Wallpaper series direction + concepts
+- [x] BlackArch enable script
+- [x] Calamares installer direction
+- [x] First-boot experience defined
+- [x] Development guide
 
-## Phase 1 — First Bootable Prototype
+## Phase 1 — First Bootable Prototype (Next)
 
-- Custom Plasma layout (top panel + dock as primary)
-- Basic dark theme with glass effects
-- Meta-package skeleton for security tools
-- Calamares installer configuration
-- Working live ISO that boots into the target aesthetic
+- [ ] Full Plasma global theme package (colors + layout + window decorations)
+- [ ] Real `.desktop` / menu files for security categories
+- [ ] Expand PKGBUILDs with exact current package names
+- [ ] Calamares branding assets + basic config
+- [ ] Build pipeline notes / live ISO skeleton
+- [ ] Test environment (VM) with theme applied
 
 ## Phase 2 — Daily Driver Quality
 
-- Performance tuning
-- Sensible defaults (power, networking, privacy, updates)
-- Hardening profile options
-- Curated application set
-- Documentation for both security users and desktop users
+- Performance and defaults tuning
+- Hardening profiles
+- App curation and visual consistency
+- Documentation for end users
+- Snapshot / rollback UX
 
 ## Phase 3 — Differentiation
 
-- Unique features (AI-assisted workflows, zero-trust helpers, better tool organization)
-- Branding and visual identity refinement
-- Potential public release / community path (decision later)
+- Unique Pitchstone features (tool organization, AI-assisted workflows, zero-trust helpers)
+- Stronger branding and visual identity
+- Community path decision
 
 ---
 
-This roadmap will evolve. Priority is always: **look and feel first, then depth**.
+**Current focus**: Finish Phase 1 foundations so we can produce the first visual prototype ISO.

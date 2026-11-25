@@ -41,7 +41,9 @@ nano
 vim
 
 # Installer
-calamares
+# calamares is NOT in official Arch repos (AUR only).
+# Removed so the first mkarchiso build can succeed.
+# Add back later via AUR or a custom package once the ISO boots.
 
 # Utilities needed for live environment
 sudo
@@ -53,6 +55,3 @@ gparted
 btrfs-progs
 e2fsprogs
 xfsprogs
-
-# For building / debugging the ISO itself if needed
-# (keep minimal for the live image)

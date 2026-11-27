@@ -8,6 +8,9 @@ set -euo pipefail
 mkdir -p /home/liveuser
 chown -R 1000:1000 /home/liveuser
 
+# Set live session timezone (was UTC by default; host is EST)
+ln -sf /usr/share/zoneinfo/America/New_York /etc/localtime
+
 # Enable essential services (best-effort)
 systemctl enable NetworkManager.service || true
 systemctl enable sddm.service || true

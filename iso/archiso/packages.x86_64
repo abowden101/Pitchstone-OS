@@ -13,7 +13,7 @@ memtest86+
 # Networking
 networkmanager
 wpa_supplicant
-dhclient
+# dhclient removed — NetworkManager provides its own DHCP client
 
 # Firmware / hardware
 sof-firmware
@@ -40,16 +40,20 @@ firefox
 nano
 vim
 
+# Shell (root is set to /usr/bin/zsh in passwd)
+zsh
+
 # Installer
 # calamares is NOT in official Arch repos (AUR only).
 # Removed so the first mkarchiso build can succeed.
-# Add back later via AUR or a custom package once the ISO boots.
+# Add back later via local repo or Chaotic-AUR once core profile is stable.
 
 # Utilities needed for live environment
 sudo
 xdg-user-dirs
 xdg-utils
 gparted
+inetutils
 
 # Filesystem tools
 btrfs-progs
